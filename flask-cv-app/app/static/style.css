@@ -1,0 +1,391 @@
+/* Place this at the top of your CSS file if you have the font files */
+@font-face {
+    font-family: 'DIN Next';
+    src: url('/static/fonts/DINNextLTPro-Regular.woff2') format('woff2'),
+         url('/static/fonts/DINNextLTPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, .a4-sheet {
+    font-family: 'DIN Next', 'DIN Alternate', 'DIN 2014', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.section {
+    background: #ffffff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.a4-sheet {
+    width: 210mm;
+    min-height: 720mm;   /* Double the height of a standard A4 (2 x 297mm) */
+    max-width: 210mm;
+    max-height: 720mm;
+    margin: 40px auto;
+    padding: 0;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden; /* Ensure children don't overflow */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cv-columns {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    min-height: 100%;
+}
+
+.cv-left {
+    height: 100%;
+    min-height: 100%;
+    align-self: stretch !important;
+    display: flex;
+    flex-direction: column;
+    background: #f5f5f5; /* Light gray */
+    border-radius: 6px 0 0 6px;
+    padding: 40px 20px 20px 20px; /* Adjust as needed for your layout */
+    box-sizing: border-box;
+    position: relative;
+}
+
+.cv-left::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: #b2b2b2; /* Light gray separator */
+    z-index: 1;
+    border-radius: 1px;
+}
+
+.cv-right {
+    width: 176.67%;
+    height: 100%;
+    padding: 10px 24px 20px 24px; /* Add 24px padding to the right and left */
+    box-sizing: border-box;
+    /* Remove max-width so it always fills the rest */
+    position: relative;
+    z-index: 2;
+}
+
+.profile-pic {
+    position: absolute;
+    top: 10px;      /* Distance from the top of the page */
+    left: 10px;     /* Distance from the left of the page */
+    width:250px;   /* Adjust size as needed */
+    height: 250px;
+    object-fit: cover;
+    object-position: center -15px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    z-index: 20;
+}
+
+.banner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cv-list i {
+    margin-right: 8px;
+    color: #35424a;
+}
+.cv-list a {
+    color: #35424a;
+    text-decoration: none;
+}
+.cv-list a:hover {
+    text-decoration: underline;
+}
+
+.cv-list.contact-list {
+    list-style: none;
+    padding-left: 0;
+    margin-left: -2px; /* Shift items more to the left */
+}
+
+.cv-list.contact-list li {
+    margin-bottom: 8px;
+    font-size: 0.98em;
+    display: flex;
+    align-items: center;
+}
+
+.cv-list.contact-list i {
+    margin-right: 8px;
+    color: #35424a;
+    min-width: 18px;
+}
+
+.cv-list {
+    margin: 0;
+    padding: 20px;
+}
+
+.cv-list li {
+    margin-bottom: 3px; /* Reduce gap between list items */
+    font-size: 0.98em;
+}
+
+
+
+.cv-section {
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 28px; /* Space for the vertical line */
+}
+
+.cv-section::before {
+    content: "";
+    position: absolute;
+    top: 1.7em; /* Start just below the header */
+    left: 0;
+    width: 2px;
+    height: calc(100% - 1.7em); /* Only under the header */
+    background: #b2b2b2;
+    border-radius: 1px;
+    z-index: 0;
+}
+
+.cv-section h3 {
+    position: relative;      /* Change from absolute to relative */
+    top: auto;               /* Remove top positioning */
+    left: auto;              /* Remove left positioning */
+    z-index: 1;
+    padding: 0 8px 0 0;
+    background: inherit; /* Inherit background from parent */
+    display: inline-block;
+    margin-bottom: 8px;      /* Add space below the header */
+}
+
+/* Ensure correct background for left and right columns */
+.cv-left .cv-section h3 {
+    background: none;
+}
+.cv-right .cv-section h3 {
+    background: #fff;
+}
+
+.cv-banner {
+    width: 100%;
+    min-height: 200px;
+    background: #35424a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;      /* Change from row to column */
+    align-items: center;         /* Center horizontally */
+    justify-content: center;     /* Center vertically */
+    border-radius: 6px 6px 0 0;
+    box-sizing: border-box;
+    padding: 24px 32px 24px 140px;
+    margin-bottom: 0;
+    text-align: center 20px;          /* Center text inside the banner */
+}
+
+.cv-banner h1 {
+    margin: 0;
+    font-size: 2em;
+    letter-spacing: 1px;
+}
+
+.cv-banner h2 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* Restore original left column section padding */
+.cv-left .cv-section {
+    padding-left: 10px !important; /* Minimal padding, override if needed */
+}
+
+
+/* Only apply extra left padding and vertical line to right column */
+.cv-right .cv-section {
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 12px; /* Space for the vertical line */
+}
+
+.cv-right .cv-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    height: 100%;
+    background: #b2b2b2;
+    border-radius: 1px;
+    z-index: 0;
+}
+
+/* Remove or override the line for left column */
+.cv-left .cv-section::before {
+    content: none;
+}
+
+.print-btn {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 100;
+    background: #35424a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.print-btn i {
+    font-size: 1.1em;
+}
+
+.cv-right .cv-section.work-experience {
+    position: relative;
+}
+
+.cv-right .cv-section.work-experience .work-subsection {
+    position: relative;
+    padding-left: 32px; /* Space for the second line */
+}
+
+.cv-right .cv-section.work-experience .work-subsection::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12px; /* Position right of the main section line */
+    width: 2px;
+    height: 100%;
+    background: #b2b2b2;
+    border-radius: 1px;
+    z-index: 0;
+}
+
+.job-title-company {
+    line-height: 1.2;
+    margin-top: 14px; /* Increased gap below company name */
+    margin-bottom: 12px;
+    font-size: 1.2em; /* Increase base font size for both */
+}
+.job-title {
+    font-weight: bold;
+    font-size: 1.2em; /* 6pt bigger than normal text (adjust as needed) */
+}
+.company-name {
+    font-style: italic;
+    color: #35424a;
+    font-size: 1.2em; /* 6pt bigger than normal text (adjust as needed) */
+}
+
+.job-details {
+    font-style: italic;
+    font-size: 0.75em;
+    color: #555;
+    letter-spacing: 0.01em;
+    font-weight: 400;
+    display: inline-block;
+    margin-top: 2px;
+    line-height: 1.1;
+}
+
+@media print {
+    body, .a4-sheet {
+        background: #fff !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+    .a4-sheet {
+        width: 210mm !important;
+        min-height: 720mm !important;
+        max-width: 210mm !important;
+        max-height: 720mm !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+    .print-btn {
+        display: none !important;
+    }
+    /* Optional: Avoid page breaks inside columns/sections */
+    /* .cv-columns, .cv-section {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    } */
+}
+
+/* Only apply Font Awesome icon bullets to lists in the right column */
+.cv-right .cv-list li i.fas,
+.cv-right .cv-list li i.fab,
+.cv-right .cv-list li i.far {
+    margin-left: -2.0em;
+    margin-right: 0.5em;
+    width: 1.2em;
+    min-width: 1.2em;
+    text-align: center;
+    position: relative;
+}
+
+.cv-right .cv-list li {
+    list-style: none;
+    position: relative;
+    padding-left: 1.5em;
+}
+
