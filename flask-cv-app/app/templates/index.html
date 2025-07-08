@@ -9,9 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
-    <button class="print-btn" onclick="window.print()">
-        <i class="fas fa-print"></i> Print CV
-    </button>
+    <div class="action-buttons">
+        <button class="print-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> Print
+        </button>
+        <button class="github-btn" onclick="window.open('https://github.com/Billalarla/BillalNaseemCVpython', '_blank')">
+            <i class="fab fa-github"></i> View on GitHub
+        </button>
+    </div>
     <div class="a4-sheet">
         <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Profile Photo" class="profile-pic">
         <div class="cv-banner">
