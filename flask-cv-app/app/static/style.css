@@ -245,6 +245,10 @@ h1 {
     letter-spacing: 1px;
 }
 
+.cv-banner .banner-text {
+    margin-left: 60px; /* Increase this value as needed for more space */
+}
+
 /* Restore original left column section padding */
 .cv-left .cv-section {
     padding-left: 10px !important; /* Minimal padding, override if needed */
